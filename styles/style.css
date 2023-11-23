@@ -1,0 +1,354 @@
+@import './null.css';
+@import './modal.css';
+@import './loader.css';
+
+:root {
+  --maxWidth: 1200px;
+  --minWidth: 360px;
+  --bgColorHeader: #a1d3bb;
+  --bgColorFooter: #557e6a;
+  --bgColorMain: #5fa884;
+  --tabColor: #557e6a;
+  --tabColorActive: #557e6a;
+  --bgColorBtn: #4a8ae9;
+  --colorTitle: #b8b63b;
+  --colorFavoriteIcon: #d1ce05;
+}
+
+body {
+  font-size: 18px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--bgColorMain);
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: var(--maxWidth);
+  min-width: var(--minWidth);
+}
+
+.container {
+  max-width: 700px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2em;
+  color: var(--colorTitle);
+  font-weight: 700;
+  padding: 10px;
+}
+
+.btn {
+  background-color: var(--bgColorBtn);
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px 20px;
+}
+/*------Header--------*/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgColorHeader);
+  max-height: 70px;
+  height: 70px;
+  width: 100%;
+  padding: 10px;
+}
+
+.logo {
+  max-width: 200px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+}
+
+.logo img {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+}
+
+.lang {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #28282c;
+  -o-border-image: initial;
+  border-image: initial;
+  border-radius: 50px;
+  padding: 0.125rem;
+  margin-left: auto;
+}
+
+.lang__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.lang__list .lang__item {
+  padding: 0.125rem;
+}
+@media (max-width: 55rem) {
+  .lang__list .lang__item {
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+.lang__list .lang__item .lang__link {
+  padding: 0.0625rem 0.6875rem;
+}
+.lang__list .lang__item .lang__link.active {
+  border-radius: 50px;
+  color: #faf7f5;
+  background-color: #28282c;
+  font-weight: 800;
+  transition: background-color 1.5s linear;
+}
+
+/*------Main-------*/
+.main {
+  flex: 1 1 auto;
+  padding: 10px;
+  width: 100%;
+}
+
+
+.weather__container {
+  border-radius: 15px;
+  margin: 0 auto;
+  background-color: var(--bgColorFooter);
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.weather__body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.weather__body__header {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  background-color: var(--bgColorHeader);
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.tabs__caption.active {
+  opacity: 1;
+  background: var(--tabColorActive);
+  border: 1px solid var(--bgColorHeader);
+  border-bottom: none;
+}
+
+.tabs__caption {
+  border-bottom: 1px solid var(--bgColorHeader);
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.5;
+  background-color: var(--tabColor);
+  transition: 1s;
+}
+
+.tabs__caption:hover {
+  opacity: 0.7;
+}
+
+
+
+.tabs__body {
+  background-color: var(--tabColor);
+}
+.tabs__body__content {
+  display: none;
+  padding: 5px 30px;
+}
+
+.tabs__body__content.active {
+  display: block;
+}
+
+.weather__body__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.weather__body__header__autocomplete_container {
+  position: relative;
+}
+
+.weather__body__header__input {
+  background-color: var(--bgColorHeader);
+  font-size: 20px;
+  padding: 5px;
+}
+
+.autocomplete__list {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: none;
+  background-color: var(--bgColorHeader);
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.autocomplete__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.autocomplete__item:hover {
+  background-color: var(--colorFavoriteIcon);
+  cursor: pointer;
+}
+
+.weather__body__header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  gap: 5px;
+  padding: 5px 10px;
+}
+
+.weather__body__header__btn polygon {
+  fill: #fff;
+}
+
+.weather__body__header__btn.active polygon {
+  fill: var(--colorFavoriteIcon);
+}
+
+.weather__body__content__container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.favorite__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--colorTitle);
+  margin-bottom: 10px;
+}
+
+.favorite__title {
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.weather__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.weather__content {
+  margin-bottom: 10px;
+}
+
+.weather__content__header,
+.weather__content__table,
+.table__row,
+.table__content,
+.table__content__weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.weather__content__table {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.table__row,
+.table__content {
+  justify-content: space-between;
+}
+
+.table__content {
+  flex-basis: 60%;
+}
+
+.table__content__weather {
+  justify-content: flex-start;
+}
+
+.weather__content__title {
+  margin-left: auto;
+}
+
+.weather__content__btn {
+  margin-left: auto;
+}
+
+/*------Footer-------*/
+.footer {
+  background-color: var(--bgColorFooter);
+  width: 100%;
+  padding: 10px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="root" class="wrapper">
+      <header class="header">
+        <div class="header__logo logo">
+          <img src="images/logo.jpg" alt="logo" class="logo__img" />
+        </div>
+        <div class="header__lang lang">
+          <ul id="lang" class="lang__list">
+            <li class="lang__item">
+              <a class="lang__link active" href="#">UA</a>
+            </li>
+            <li class="lang__item">
+              <a class="lang__link" href="#">EN</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main class="main">
+        <section class="weather__section">
+          <div class="weather__container container">
+            <div class="weather__head__tabs tabs">
+              <div class="tabs__caption active" data-tab="maintab">Головна</div>
+              <div class="tabs__caption" data-tab="favoritetab">Обране</div>
+            </div>
+            <div class="weather__body">
+              <div class="weather__body__header">
+                <div
+                  id="autocompleteContainer"
+                  class="weather__body__header__autocomplete_container autocomplete"
+                >
+                  <input
+                    id="cityInput"
+                    class="weather__body__header__input autocomplete__input"
+                    type="text"
+                  />
+                  <button id="cityAdd" class="weather__body__header__add btn">
+                    Додати
+                  </button>
+                </div>
+                <button id="favorite" class="weather__body__header__btn btn">
+                  <div class="weather__body__header__btn__icon icon">
+                    <svg
+                      height="24px"
+                      width="24px"
+                      version="1.1"
+                      id="Layer_1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 501.28 501.28"
+                      xml:space="preserve"
+                    >
+                      <g>
+                        <polygon
+                          points="501.28,194.37 335.26,159.33 250.64,12.27 250.64,419.77 405.54,489.01 387.56,320.29 	"
+                        />
+                        <polygon
+                          points="166.02,159.33 0,194.37 113.72,320.29 95.74,489.01 250.64,419.77 250.64,12.27 	"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <span>В обране</span>
+                </button>
+              </div>
+              <div class="weather__body__main">
+                <div class="weather__body__tabs tabs">
+                  <div class="tabs__head tabs">
+                    <div
+                      class="tabs__caption active"
+                      data-tabperiod="dayWeather"
+                    >
+                      День
+                    </div>
+                    <div class="tabs__caption" data-tabperiod="weekWeather">
+                      Тиждень
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="weatherContainer"
+                class="weather__body__content__container"
+              >
+                <canvas
+                  id="chart"
+                  class="weather__content__chart chart"
+                  data-chart="123"
+                >
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">Yevhen Diachenko 2023</footer>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+    ></script>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>
