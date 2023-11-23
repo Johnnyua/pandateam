@@ -1,5 +1,6 @@
 import { createElement } from '../../helpers/index.js';
 import { locale } from '../../config/config.js';
+import { useLangStore } from '../../store/index.js';
 
 const langState = () => {
   const langStore = useLangStore();
