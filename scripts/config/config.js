@@ -1,4 +1,8 @@
-
+export {
+  API_KEY_WEATHER,
+  API_KEY_IP,
+  API_KEY_AUTOCOMPLETE,
+} from './api_keys.js';
 
 const BASE_URL_FORECAST = 'https://api.openweathermap.org/data/2.5/forecast';
 const BASE_URL_IP = 'https://ipgeolocation.abstractapi.com/v1/?api_key=';
@@ -6,8 +10,7 @@ const BASE_URL_AUTOCOMPLETE =
   'https://api.geoapify.com/v1/geocode/autocomplete';
 const BASE_URL_WEATHER_ICON =
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/';
-  // Put your API keys here 
-
+// Put your API keys here
 
 const config = {
   forecastUrl: BASE_URL_FORECAST,
