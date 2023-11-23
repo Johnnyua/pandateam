@@ -10,5 +10,9 @@ export {
   filterList,
   filterObjectList,
 } from './general-helpers.js';
-export { convertFromGMTToDate } from './date-helper.js';
+export {
+  convertFromGMTToDate,
+  formatDateLocale,
+  formatTimeLocale,
+} from './date-helper.js';
 export { convertTemperature, calcAvgTemp } from './math-helper.js';
