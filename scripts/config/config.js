@@ -1,4 +1,4 @@
-export {
+import {
   API_KEY_WEATHER,
   API_KEY_IP,
   API_KEY_AUTOCOMPLETE,
