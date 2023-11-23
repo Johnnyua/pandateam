@@ -7,9 +7,7 @@ const BASE_URL_AUTOCOMPLETE =
 const BASE_URL_WEATHER_ICON =
   'https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/';
   // Put your API keys here 
-const API_KEY_WEATHER = 'openweathermap_your_api_key';
-const API_KEY_IP = 'abstractapi_your_api_key';
-const API_KEY_AUTOCOMPLETE = 'geoapify_your_api_key';
+
 
 const config = {
   forecastUrl: BASE_URL_FORECAST,
