@@ -4,6 +4,8 @@ import {
   convertFromGMTToDate,
   createIconUrl,
   calcAvgTemp,
+  formatDateLocale,
+  formatTimeLocale
 } from '../helpers/index.js';
 const loadCurrentWeather = async (params) => {
   try {
@@ -21,7 +23,7 @@ const loadCurrentWeather = async (params) => {
       const iconLink = createIconUrl(item.weather[0].icon);
       const weatherItem = {
         id: item.weather[0].id,
-        date: date.toLocaleTimeString(),
+        date: formatTimeLocale(date),
         iconLink: iconLink,
         temp: Math.round(item.main.temp),
         description: item.weather[0].description,
@@ -57,7 +59,7 @@ const loadWeatherFor5Days = async (params = {}) => {
       const iconLink = createIconUrl(item.weather[0].icon);
       const weatherItem = {
         id: item.weather[0].id,
-        date: date.toDateString(),
+        date: formatDateLocale(date),
         iconLink: iconLink,
         temp: Math.round(item.main.temp),
         description: item.weather[0].description,
