@@ -44,6 +44,7 @@ const locale = {
     },
     title: {
       modalDel: 'Видалити зі списку',
+      chartTitle: 'Температура за період',
     },
     text: {
       delPlaceFromList: ' буде видалено зі списку.\n Підтверджуєте?',
@@ -66,6 +67,7 @@ const locale = {
     },
     title: {
       modalDel: 'Delete from list',
+      chartTitle: 'Temperature by period',
     },
     text: {
       delPlaceFromList: ' will be removed from the list.\n Do you confirm?',
